@@ -1,0 +1,4 @@
+Flask==0.12.2
+Flask-API==1.0
+PyGObject==3.27.1
+git+git://github.com/OParl/validator.git#egg=oparl_validator
