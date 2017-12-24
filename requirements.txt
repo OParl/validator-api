@@ -1,4 +1,6 @@
 Flask==0.12.2
 Flask-API==1.0
+Flask-OAuthlib==0.9.4
+Flask-SQLAlchemy==2.3.2
 PyGObject==3.27.1
 git+git://github.com/OParl/validator.git#egg=oparl_validator

@@ -25,13 +25,20 @@ SOFTWARE.
 
 import argparse
 from server.api import app
+from server.db import db
 
 def parse_args():
     parser = argparse.ArgumentParser(prog='server.py')
     parser.add_argument('--debug', '-d', action='store_true', dest='debug', default=False)
+    parser.add_argument('--create-db', action='store_true', dest='create_db', default=False)
 
     return parser.parse_args()
 
 if __name__ == '__main__':
     args = parse_args()
+
+    if args.create_db:
+        db.create_all()
+        exit(0)
+
     app.run(debug=args.debug)

@@ -21,3 +21,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+
+from flask_sqlalchemy import SQLAlchemy
+from server.api import app
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../data.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+global db
+db = SQLAlchemy(app)
+
+class Result(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    def __repr__(self):
+        return '<Result {}'.format(self.id)

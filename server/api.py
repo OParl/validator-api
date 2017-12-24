@@ -39,5 +39,4 @@ def validate():
 
 @app.route('/result/<string:uuid>', methods=['GET'])
 def result(uuid):
-
     return []
